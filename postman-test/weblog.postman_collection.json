@@ -32,6 +32,62 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "3.8 参数校验：参数正确",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"犬小哈\",\r\n    \"sex\": 1,\r\n    \"age\": 32,\r\n    \"email\": \"123124@qq.com\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/test",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.8 参数校验：参数不正确",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"\",\r\n    \"sex\": null,\r\n    \"age\": 120,\r\n    \"email\": \"123124qq.com\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/test",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
