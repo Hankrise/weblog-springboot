@@ -1,9 +1,10 @@
 package com.quanxiaoha.weblog.common.utils;
 
+import com.quanxiaoha.weblog.common.exception.BaseExceptionInterface;
 import lombok.Data;
 
 import java.io.Serializable;
-
+import com.quanxiaoha.weblog.common.exception.BizException;
 /**
  * @author: 犬小哈
  * @url: www.quanxiaoha.com
@@ -55,4 +56,22 @@ public class Response<T> implements Serializable {
         response.setMessage(errorMessage);
         return response;
     }
+
+    public static <T> Response<T> fail(BizException bizException) {
+        Response<T> response = new Response<>();
+        response.setSuccess(false);
+        response.setErrorCode(bizException.getErrorCode());
+        response.setMessage(bizException.getErrorMessage());
+        return response;
+    }
+
+    public static <T> Response<T> fail(BaseExceptionInterface baseExceptionInterface) {
+        Response<T> response = new Response<>();
+        response.setSuccess(false);
+        response.setErrorCode(baseExceptionInterface.getErrorCode());
+        response.setMessage(baseExceptionInterface.getErrorMessage());
+        return response;
+    }
+
+
 }
