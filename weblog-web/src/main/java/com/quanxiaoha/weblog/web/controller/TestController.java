@@ -26,21 +26,27 @@ import java.util.stream.Collectors;
 @Slf4j
 public class TestController {
 
+//    @PostMapping("/test")
+//    @ApiOperationLog(description = "测试接口")
+//    public Response test(@RequestBody @Validated User user, BindingResult bindingResult) {
+//        // 是否存在校验错误
+//        if (bindingResult.hasErrors()) {
+//            // 获取校验不通过字段的提示信息
+//            String errorMsg = bindingResult.getFieldErrors()
+//                    .stream()
+//                    .map(FieldError::getDefaultMessage)
+//                    .collect(Collectors.joining(", "));
+//
+//            return Response.fail(errorMsg);
+//        }
+//
+//        // 返参
+//        return Response.success();
+//    }
+
     @PostMapping("/test")
     @ApiOperationLog(description = "测试接口")
-    public Response test(@RequestBody @Validated User user, BindingResult bindingResult) {
-        // 是否存在校验错误
-        if (bindingResult.hasErrors()) {
-            // 获取校验不通过字段的提示信息
-            String errorMsg = bindingResult.getFieldErrors()
-                    .stream()
-                    .map(FieldError::getDefaultMessage)
-                    .collect(Collectors.joining(", "));
-
-            return Response.fail(errorMsg);
-        }
-
-        // 返参
+    public Response test(@RequestBody @Validated User user) {
         return Response.success();
     }
 
