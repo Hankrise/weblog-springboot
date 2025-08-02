@@ -2,5 +2,11 @@
 
 import { createApp } from 'vue'
 import App from './App.vue'
+// 导入路由
+import router from './router'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+// 应用路由
+app.use(router)
+app.mount('#app')
