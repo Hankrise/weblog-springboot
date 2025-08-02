@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4d556217-26cf-4c63-b174-a56a2ff893ab",
+		"_postman_id": "143e09c3-be55-44aa-a6a0-353e4a98b5c5",
 		"name": "weblog",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -75,6 +75,28 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"username\": \"\",\r\n    \"sex\": null,\r\n    \"age\": 120,\r\n    \"email\": \"123124qq.com\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/test",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.13 测试日期",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"age\": 22,\r\n  \"email\": \"123@qq.com\",\r\n  \"sex\": 0,\r\n  \"username\": \"犬小哈\",\r\n  \"createTime\": \"2022-09-02 12:00:00\",\r\n  \"updateDate\": \"2022-09-11\",\r\n  \"time\": \"12:00:00\"\r\n}\r\n"
 				},
 				"url": {
 					"raw": "localhost:8080/test",
